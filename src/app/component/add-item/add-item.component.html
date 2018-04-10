@@ -1,3 +1,18 @@
-<p>
-  add-item works!
-</p>
+<div class="card">
+  <div class="card-content">
+    <span class="card-title">Add Items</span>
+    <form (ngSubmit)="onSubmit()" class="col s6">
+      <div class="row">
+        <div class="input-field col s6">
+          <input type="text" [(ngModel)]="item.item" placeholder="Add Item" name="item">
+          <label>Title</label>
+        </div>
+        <div class="input-field col s6">
+          <input type="text" [(ngModel)]="item.description" placeholder="Add Sescription" name="description">
+          <label>Description</label>
+        </div>
+        <input type="submit" value="Submit" class="btn">
+      </div>
+    </form>
+  </div>
+</div>
