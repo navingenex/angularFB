@@ -14,7 +14,10 @@ export class ItemsComponent implements OnInit {
     this.itemService.getItems().subscribe(items=>{
       //console.log(items);
       this.items=items;
-    })
+    });
+  }
+  deleteItem(event,item){
+    this.itemService.deleteItem(item);
   }
 
 }
