@@ -1,0 +1,23 @@
+<div *ngIf="auth.user|async;then authenticated else guest">
+  <!-- template will replace this div -->
+
+</div>
+
+<ng-template #guest>
+  <h3>Guest</h3>
+  <p>Login to guest started...</p>
+
+  <button (click)="auth.googleLogin()">
+    <i class="fa fa-google"></i>Connect Google
+  </button>
+</ng-template>
+
+<ng-template #authenticated>
+  <div *ngIf="auth.user|async as user">
+    <h3>Hello, {{user.displayName}}</h3>
+    <img [src]="user.photoURL" style="height:100px;width:100px;">
+    <p>Uid: {{user.uid}}</p>
+    <p>Favroite Color: {{user.favoriteColor}}</p>
+
+  </div>
+</ng-template>
